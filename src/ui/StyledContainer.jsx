@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const StyledContainer = styled.div`
@@ -48,5 +48,44 @@ export const StyledButton = styled(Link)`
   &:hover {
     background-color: transparent;
     color: white;
+  }
+`;
+
+export const StyledLink = styled(NavLink)`
+  color: #ffffff;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  transition: all 0.3s;
+  position: relative;
+  font-weight: 500;
+
+  &:hover {
+    color: #00d2d2;
+  }
+
+  &.active:link,
+  &.active:visited {
+    color: #00d2d2;
+  }
+
+  &::after {
+    content: "";
+    width: 0%;
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+    transition: all 0.3s;
+
+    border-width: 0 0 1px;
+    border-style: solid;
+  }
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  &.active::after {
+    width: 100%;
+    left: 0;
   }
 `;

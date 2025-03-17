@@ -1,9 +1,10 @@
-import AboutUs from "../ui/Home/AboutUs";
-import ContactSec from "../ui/Home/ContactSec";
-import Dashboard from "../ui/Home/Dashboard";
-import HeroSection from "../ui/Home/HeroSection";
-import HowItWork from "../ui/Home/HowItWork";
-import Testimonials from "../ui/Home/Testimonials";
+import AboutUs from "../features/Home/AboutUs";
+import ContactSec from "../features/Home/ContactSec";
+import Dashboard from "../features/Home/Dashboard";
+import Footer from "../features/Home/Footer";
+import HeroSection from "../features/Home/HeroSection";
+import HowItWork from "../features/Home/HowItWork";
+import Testimonials from "../features/Home/Testimonials";
 
 function Home() {
   return (

@@ -2,31 +2,40 @@
 @import "animate.css";
 @import "tailwindcss-animated";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-  /* Creating animations for dark mode */
-  transition:
-    background-color 0.3s,
-    border 0.3s;
-}
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 
-html {
-  font-size: 70.5%;
-  font-family: "Montserrat";
+    /* Creating animations for dark mode */
+    transition:
+      background-color 0.3s,
+      border 0.3s;
+  }
+
+  html {
+    font-size: 70.5%;
+    font-family: "Montserrat";
+  }
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.96);
+  /* background-color: rgba(0, 0, 0, 0.96); */
+  background-color: #171717;
   color: rgb(235, 235, 235);
   min-height: 100vh;
 }
 
 .itemClass {
   display: grid;
-  color: #b1ec00;
+  color: rgb(158, 158, 158);
   grid-template-columns: 1fr;
   padding: 3rem;
   scale: 0.8;
@@ -37,10 +46,9 @@ body {
 }
 
 .itemClass:hover {
-  color: #bfff00;
+  color: white;
   scale: 1;
   border-radius: 24px;
-  font-weight: 700;
 }
 
 .dotClass {

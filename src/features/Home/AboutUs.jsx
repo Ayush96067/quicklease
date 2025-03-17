@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import styled, { css } from "styled-components";
-import { StyledContainer, StyledDiv } from "../StyledContainer";
+import { StyledContainer, StyledDiv } from "../../ui/StyledContainer";
 
 const StyledPara = styled.div`
   line-height: 2em;
@@ -46,13 +46,13 @@ const StyledHead = styled.h1`
 
 function AboutUs() {
   const { ref: aboutSecRef, inView: aboutSecView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
     triggerOnce: true,
   });
   return (
     <StyledContainer
       ref={aboutSecRef}
-      className={`min-h-[150vh] lg:min-h-[90vh] ${aboutSecView ? "translate-y-0 border-t-2 opacity-100 blur-none" : "translate-y-[60px] opacity-0 blur-3xl"} `}
+      className={`min-h-[120vh] lg:min-h-[70vh] ${aboutSecView ? "translate-y-0 border-t-2 opacity-100 blur-none" : "translate-y-[60px] opacity-0 blur-3xl"} `}
     >
       <StyledDiv className="top-10 w-full gap-6 md:top-40">
         <h1 className="text-4xl uppercase md:text-6xl lg:text-9xl">About us</h1>

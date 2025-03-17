@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 import { MdMenuOpen } from "react-icons/md";
 import { useState } from "react";
+import Footer from "../features/Home/Footer";
 const StyledAppLayout = styled.div`
   /* display: flex; */
   max-width: 100vw;
@@ -18,6 +19,7 @@ function Applayout() {
       />
       <Navbar setDisplay={setDisplay} display={display} />
       <Outlet />
+      <Footer />
     </StyledAppLayout>
   );
 }

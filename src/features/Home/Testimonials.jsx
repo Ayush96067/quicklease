@@ -1,10 +1,9 @@
 import { BiUser } from "react-icons/bi";
-import { StyledContainer } from "../StyledContainer";
-// import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
+
 import styled from "styled-components";
-import Crousel from "../Crousel";
 import { useInView } from "react-intersection-observer";
+import { StyledContainer } from "../../ui/StyledContainer";
+import Crousel from "../../ui/Crousel";
 
 const infoUser = [
   {
@@ -64,7 +63,7 @@ const Stylehead = styled.h1`
 
 function Testimonials() {
   const { ref: aboutSecRef, inView: aboutSecView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
     triggerOnce: true,
   });
   return (

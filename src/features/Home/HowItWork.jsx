@@ -6,7 +6,7 @@ import {
   StyledStrong,
   StyledTrandiv,
   StyledUl,
-} from "../StyledContainer";
+} from "../../ui/StyledContainer";
 import { useInView } from "react-intersection-observer";
 import { GiElectric } from "react-icons/gi";
 import { MdSports } from "react-icons/md";
@@ -16,7 +16,7 @@ import { FiMusic } from "react-icons/fi";
 
 function HowItWork() {
   const { ref: aboutSecRef, inView: aboutSecView } = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
     triggerOnce: true,
   });
   return (
