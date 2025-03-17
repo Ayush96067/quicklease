@@ -4,22 +4,20 @@ import styled from "styled-components";
 import { MdMenuOpen } from "react-icons/md";
 import { useState } from "react";
 const StyledAppLayout = styled.div`
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+  /* display: flex; */
+  max-width: 100vw;
+  min-height: 100vh;
 `;
 function Applayout() {
   const [display, setDisplay] = useState(false);
   return (
-    <StyledAppLayout>
+    <StyledAppLayout className="">
       <MdMenuOpen
         onClick={() => setDisplay((open) => !open)}
-        className={`fixed left-0 m-3 text-3xl md:hidden`}
+        className={`fixed left-0 z-50 m-3 text-3xl md:hidden`}
       />
       <Navbar setDisplay={setDisplay} display={display} />
-      <div className="w-full">
-        <Outlet />
-      </div>
+      <Outlet />
     </StyledAppLayout>
   );
 }

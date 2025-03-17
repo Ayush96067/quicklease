@@ -2,9 +2,7 @@
 @import "animate.css";
 @import "tailwindcss-animated";
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -14,11 +12,44 @@
     background-color 0.3s,
     border 0.3s;
 }
+
 html {
   font-size: 70.5%;
+  font-family: "Montserrat";
 }
 
 body {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.96);
   color: rgb(235, 235, 235);
+  min-height: 100vh;
+}
+
+.itemClass {
+  display: grid;
+  color: #b1ec00;
+  grid-template-columns: 1fr;
+  padding: 3rem;
+  scale: 0.8;
+  width: fit-content;
+  transition: all 0.4s ease-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.itemClass:hover {
+  color: #bfff00;
+  scale: 1;
+  border-radius: 24px;
+  font-weight: 700;
+}
+
+.dotClass {
+  color: white;
+  background-color: white;
+  width: fit-content;
+}
+
+.Container {
+  display: flex;
+  gap: 2rem;
 }

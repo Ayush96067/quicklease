@@ -22,24 +22,9 @@ const StyledHead = styled.h1`
 
 const StyledContainer = styled.div`
   width: 100%;
-
-  background: repeating-linear-gradient(
-    90deg,
-    #000000,
-    #070606 10px,
-    #000000 10px,
-    #33333361 20px
-  );
 `;
 
 function Dashboard() {
-  const [display, setDisplay] = useState(false);
-  useEffect(function () {
-    setTimeout(() => {
-      setDisplay(true);
-    }, 2000);
-  }, []);
-
   return (
     <StyledContainer className="flex h-[100vh] w-full items-center justify-center">
       <div

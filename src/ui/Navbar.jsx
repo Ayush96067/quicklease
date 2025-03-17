@@ -54,9 +54,9 @@ const StyledAuthLink = styled(NavLink)`
   font-family: "Poppins";
   font-weight: 300;
   padding: 7px;
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
   &:hover {
-    background-color: #d7d7d7;
+    background-color: #bcbcbc;
   }
 `;
 
