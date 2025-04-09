@@ -15,7 +15,7 @@ function Logo() {
       {/* Change the logo to 'QL' */}
       <StyledImage
         src="QuickLease-dark.png"
-        className="w-[12rem] rounded-full"
+        className="w-[10rem] rounded-full"
       />
     </NavLink>
   );

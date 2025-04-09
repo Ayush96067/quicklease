@@ -9,6 +9,7 @@ const StyledAppLayout = styled.div`
   max-width: 100vw;
   min-height: 100vh;
 `;
+
 function Applayout() {
   const [display, setDisplay] = useState(false);
   return (

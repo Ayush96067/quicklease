@@ -19,18 +19,25 @@
       background-color 0.3s,
       border 0.3s;
   }
+}
+/* 
+html {
+  font-size: 60.5%;
+  font-family: "Montserrat";
+} */
 
-  html {
-    font-size: 70.5%;
-    font-family: "Montserrat";
-  }
+html {
+  font-size: 70.5%;
+  zoom: 1;
 }
 
 body {
   /* background-color: rgba(0, 0, 0, 0.96); */
   background-color: #171717;
+  font-family: "Montserrat";
   color: rgb(235, 235, 235);
   min-height: 100vh;
+  font-size: 62.5%;
 }
 
 .itemClass {
@@ -60,4 +67,35 @@ body {
 .Container {
   display: flex;
   gap: 2rem;
+}
+
+.itemClass2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  /* padding: 1rem; */
+  text-align: center;
+}
+
+.itemClass3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  padding: 1rem;
+}
+
+.dotListClass1 {
+  border-radius: 24px;
+  padding: 2rem;
+  place-self: center;
+  width: fit-content;
+}
+.dotListClass1 * * {
+  background-color: #bfff00;
+}
+
+.dotlistclass1:hover * * {
+  background-color: black;
 }

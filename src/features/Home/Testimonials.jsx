@@ -75,7 +75,7 @@ function Testimonials() {
         What our users say
       </Stylehead>
 
-      <Crousel itemClass={"itemClass"}>
+      <Crousel itemClass={"itemClass"} responsive={responsive}>
         {infoUser.map((info, index) => (
           <StyledDiv className="" key={index}>
             <BiUser className="self-center rounded-3xl border text-5xl lg:text-8xl" />

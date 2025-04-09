@@ -1,27 +1,18 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
-
-function Crousel({ children, autoPlay = true, itemClass, slidesToSlide = 1 }) {
+function Crousel({
+  children,
+  autoPlay = true,
+  itemClass,
+  slidesToSlide = 1,
+  responsive,
+  className,
+  showDots = false,
+  renderDotsOutside = false,
+  dotListClass = "",
+  removeArrowOnDeviceType = ["tablet", "mobile"],
+}) {
   return (
     <Carousel
       additionalTransfrom={0}
@@ -31,25 +22,26 @@ function Crousel({ children, autoPlay = true, itemClass, slidesToSlide = 1 }) {
       customTransition="all 1s"
       transitionDuration={1000}
       centerMode={false}
-      className="Container flex w-[90%]"
-      dotListClass=""
+      className={`${className} Container flex w-[90%]`}
+      dotListClass={dotListClass}
       draggable
       focusOnSelect={false}
       infinite
       itemClass={itemClass}
-      keyBoardControl
-      minimumTouchDrag={80}
+      // centerMode={true}
+      keyBoardControl={true}
+      minimumTouchDrag={0}
       pauseOnHover={true}
       renderArrowsWhenDisabled={false}
       renderButtonGroupOutside={false}
-      renderDotsOutside={false}
-      removeArrowOnDeviceType={["tablet", "mobile"]}
+      renderDotsOutside={renderDotsOutside}
+      removeArrowOnDeviceType={removeArrowOnDeviceType}
       responsive={responsive}
       rewind={false}
       rewindWithAnimation={false}
       rtl={false}
       shouldResetAutoplay
-      showDots={false}
+      showDots={showDots}
       sliderClass=""
       slidesToSlide={slidesToSlide}
       swipeable
