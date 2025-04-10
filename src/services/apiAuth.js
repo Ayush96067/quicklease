@@ -38,8 +38,6 @@ export async function signup(user) {
 
   if (error) throw new Error(error.message);
 
-  //gesdfxobzesdfmeaonhm.supabase.co/storage/v1/object/public/avatar//img8.jpg
-
   const { error: storageError } = await supabase.storage
     .from("avatar")
     .upload(imageName, imageSrc[0]);

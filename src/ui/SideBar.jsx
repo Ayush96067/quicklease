@@ -17,8 +17,11 @@ function SideBar({ setShow, sideBarComponent }) {
   useEffect(() => {
     if (!searchParams.has("tab")) {
       searchParams.set("tab", "profile");
-      setSearchParams(searchParams);
     }
+
+    let currTab = searchParams.get("tab");
+    setSearchParams(searchParams);
+    setCurrentTab(currTab);
   }, [searchParams, setSearchParams]);
 
   const handleClick = (paramName, paramValue) => {

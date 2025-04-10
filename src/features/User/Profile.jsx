@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useCurrentUser } from "../authentication/useCurrentUser";
+import Spinner from "../../ui/Spinner";
 
 const StyledUserAvatar = styled.div`
   display: flex;
@@ -29,9 +30,15 @@ const StyledH1 = styled.h1`
 `;
 
 function Profile() {
-  const { user } = useCurrentUser();
+  const { user, isPending } = useCurrentUser();
+  if (isPending)
+    return (
+      <div className="flex h-full w-full items-center justify-center">
+        <Spinner />
+      </div>
+    );
+
   const data = user.identities[0].identity_data;
-  console.log(data);
 
   return (
     <div className="flex flex-col gap-10 p-3 text-xl text-white md:text-3xl lg:text-4xl">

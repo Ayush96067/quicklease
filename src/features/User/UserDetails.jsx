@@ -8,6 +8,7 @@ import ChangeUsername from "./ChangeUsername";
 import AddProduct from "./AddProduct";
 import Orders from "./Orders";
 import ChangeProfile from "./ChangeProfile";
+import Order_History from "./Order_History";
 
 const sideBarComponent = [
   {
@@ -19,8 +20,12 @@ const sideBarComponent = [
     tabName: "add",
   },
   {
-    name: "Your Orders",
-    tabName: "orders",
+    name: "Your Products",
+    tabName: "products",
+  },
+  {
+    name: " Order History",
+    tabName: "history",
   },
   {
     name: "Change Password",
@@ -48,7 +53,7 @@ function UserDetails({ user }) {
         {show ? "Close" : "Menu"}
       </Button>
       <div
-        className={`border-r-4 border-r-[#323131] lg:w-full lg:translate-x-0 ${show ? "w-full translate-x-0" : "w-0 -translate-x-full"} overflow-hidden bg-[#ffffff10] transition-all duration-300 ease-in-out`}
+        className={`border-r-4 border-r-[#323131] lg:w-full lg:translate-x-0 ${show ? "w-full translate-x-0" : "w-0 -translate-x-full overflow-hidden"} bg-[#ffffff10] transition-all duration-300 ease-in-out`}
       >
         <SideBar setShow={setShow} sideBarComponent={sideBarComponent} />
       </div>
@@ -70,9 +75,10 @@ function DisplayContent() {
     <>
       {params === "profile" && <Profile />}
       {params === "add" && <AddProduct />}
+      {params === "products" && <Orders />}
+      {params === "history" && <Order_History />}
       {params === "password" && <ChangePassword />}
       {params === "username" && <ChangeUsername />}
-      {params === "orders" && <Orders />}
       {params === "profileImage" && <ChangeProfile />}
     </>
   );

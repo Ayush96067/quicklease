@@ -6,6 +6,7 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import FileInput from "../../ui/FileInput";
 import { Button } from "../../ui/Button";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 function SignupForm() {
   const { register, formState, getValues, handleSubmit, reset } = useForm();

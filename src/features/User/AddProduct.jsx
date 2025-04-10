@@ -7,18 +7,21 @@ import Form from "../../ui/Form";
 import { useCurrentUser } from "../authentication/useCurrentUser";
 import Textarea from "../../ui/Textarea";
 import { Option, Select } from "../../ui/Select";
+import { useAddProduct } from "./useAddProduct";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 function AddProduct() {
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
+  const { createProduct, isPending } = useAddProduct();
   const { user } = useCurrentUser();
-  console.log(user.identities[0].identity_data.address);
 
   function onSubmit(e) {
-    console.log(e);
+    createProduct(e);
   }
+
   return (
-    <div className="flex min-h-[100vh] flex-col gap-10 p-4">
+    <div className="flex flex-col gap-10 p-4">
       <h1 className="text-center">Add Product</h1>
       <Form
         onSubmit={handleSubmit(onSubmit)}
@@ -33,18 +36,20 @@ function AddProduct() {
               disabled={true}
             />
           </FormRow>
+
           <FormRow label="Name" error={errors?.name?.message}>
             <Input
               type="text"
+              disabled={isPending}
               placeholder="Dell Laptop"
               id="name"
               {...register("name", { required: "This field is required" })}
             />
           </FormRow>
-
           <FormRow label="Company" error={errors?.company?.message}>
             <Input
               type="text"
+              disabled={isPending}
               id="company"
               placeholder="Dell"
               {...register("company", { required: "This field is required" })}
@@ -53,6 +58,7 @@ function AddProduct() {
           <FormRow label="Rent Price" error={errors?.price?.message}>
             <Input
               type="number"
+              disabled={isPending}
               id="price"
               placeholder="'0' for renting free.."
               {...register("price", { required: "This field is required" })}
@@ -64,6 +70,7 @@ function AddProduct() {
           <Textarea
             type="text"
             id="description"
+            disabled={isPending}
             placeholder="A brief description of the product , its features, model, years used and other necessary details..."
             {...register("description", { required: "This field is required" })}
           />
@@ -76,16 +83,17 @@ function AddProduct() {
           <Input
             type="text"
             id="address"
+            disabled={isPending}
             defaultValue={user.identities[0].identity_data.address}
             {...register("address", { required: "This field is required" })}
           />
         </FormRow>
-
         <FormRow label="Product Image" error={errors?.product_image?.message}>
           <FileInput
             id="prodImage"
             accept="images/*"
-            {...register("product_image")}
+            {...register("imageSrc")}
+            disabled={isPending}
           />
         </FormRow>
         <FormRow label="Category" error={errors?.category?.message}>
@@ -93,6 +101,7 @@ function AddProduct() {
             name="cars"
             id="cars"
             {...register("category", { required: true })}
+            disabled={isPending}
           >
             <Option value="" disabled>
               Select Category
@@ -111,35 +120,42 @@ function AddProduct() {
           </Select>
         </FormRow>
 
-        <div class="flex gap-5 text-2xl">
-          <div class="ms-2">
+        <div className="flex gap-5 text-2xl" disabled={isPending}>
+          <div className="ms-2">
             <label
-              for="delivary"
-              class="font-medium text-gray-900 dark:text-gray-300"
+              htmlFor="delivary"
+              className="font-medium text-gray-900 dark:text-gray-300"
             >
               Delivary Available
               <p
                 id="helper-checkbox-text"
-                class="text-sm font-normal text-gray-500 dark:text-gray-300"
+                className="text-sm font-normal text-gray-500 dark:text-gray-300"
               >
                 Product can be shipped to user
               </p>
             </label>
           </div>
-          <div class="flex items-center">
+          <div className="flex items-center">
             <input
               id="delivary"
               aria-describedby="helper-checkbox-text"
               type="checkbox"
-              value=""
               className="h-4 scale-[2] rounded-sm border-none lg:scale-[2.5]"
-              {...register("delivary")}
+              {...register("delivary_available")}
             />
           </div>
         </div>
         <div className="flex justify-end gap-5 lg:justify-center">
           <Button type="reset">Cancel</Button>
-          <Button>Add Product</Button>
+          <Button>
+            {isPending ? (
+              <>
+                <SpinnerMini />{" "}
+              </>
+            ) : (
+              "Add Product"
+            )}
+          </Button>
         </div>
       </Form>
     </div>
