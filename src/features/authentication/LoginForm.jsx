@@ -10,9 +10,9 @@ import SpinnerMini from "../../ui/SpinnerMini";
 
 function LoginForm() {
   const { register, formState, handleSubmit, reset } = useForm();
-  // const { signup, isSigningup } = useSignup();
-  // const navigate = useNavigate();
+
   const { login, isLoggingin } = useLogin();
+
   const { errors } = formState;
 
   function onSubmit(e) {

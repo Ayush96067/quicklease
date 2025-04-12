@@ -2,6 +2,9 @@ import styled from "styled-components";
 import LoginForm from "../features/authentication/LoginForm";
 import Signin_up_text from "../ui/Signin_up_text";
 import BackArrow from "../ui/BackArrow";
+import supabase from "../services/supabase";
+import toast from "react-hot-toast";
+import { Button } from "../ui/Button";
 
 const StyledDiv = styled.div`
   max-width: 100vw;
@@ -17,6 +20,7 @@ function Login() {
       </h1>
       <LoginForm />
       <Signin_up_text para={"Not a member"} to={"/register"} text="Register" />
+      <Button>Forget Password</Button>
     </StyledDiv>
   );
 }

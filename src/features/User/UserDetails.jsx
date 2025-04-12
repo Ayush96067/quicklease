@@ -3,12 +3,11 @@ import { Button } from "../../ui/Button";
 import { useSearchParams } from "react-router-dom";
 import SideBar from "../../ui/Sidebar";
 import Profile from "./Profile";
-import ChangePassword from "./ChangePassword";
-import ChangeUsername from "./ChangeUsername";
 import AddProduct from "./AddProduct";
 import Orders from "./Orders";
-import ChangeProfile from "./ChangeProfile";
 import Order_History from "./Order_History";
+import UpdateUserPassword from "./UpdateUserPassword";
+import UpdateUserData from "./UpdateUserData";
 
 const sideBarComponent = [
   {
@@ -32,12 +31,8 @@ const sideBarComponent = [
     tabName: "password",
   },
   {
-    name: "Change Username",
-    tabName: "username",
-  },
-  {
-    name: " Change Image",
-    tabName: "profileImage",
+    name: "Change User Data",
+    tabName: "userdata",
   },
 ];
 
@@ -77,9 +72,8 @@ function DisplayContent() {
       {params === "add" && <AddProduct />}
       {params === "products" && <Orders />}
       {params === "history" && <Order_History />}
-      {params === "password" && <ChangePassword />}
-      {params === "username" && <ChangeUsername />}
-      {params === "profileImage" && <ChangeProfile />}
+      {params === "password" && <UpdateUserPassword />}
+      {params === "userdata" && <UpdateUserData />}
     </>
   );
 }

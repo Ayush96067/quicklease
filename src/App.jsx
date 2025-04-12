@@ -19,6 +19,7 @@ import PageNotFound from "./pages/PageNotFound";
 import ProductsPage from "./features/Products/ProductsPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import { Toaster } from "react-hot-toast";
+import Product from "./features/Products/Product";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,7 +43,11 @@ function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="products" element={<Products />} />
             <Route path="about" element={<About />} />
-            <Route path="/products/:category" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route
+              path="/products/category/:category"
+              element={<ProductsPage />}
+            />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

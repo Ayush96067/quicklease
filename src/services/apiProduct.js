@@ -38,13 +38,21 @@ export async function editProduct(data) {
   if (error) throw new Error(error.message);
 }
 
-export async function getOrders(userid) {
+export async function getOrder(data) {
+  const { column, value } = data.queryKey[1];
+
   let { data: Products, error } = await supabase
     .from("Products")
     .select("*")
-    .eq("userid", userid);
+    .eq([column], value);
 
   if (error) throw new Error(error.message);
 
   return Products;
+}
+
+export async function getAllOrders() {
+  let { data, error } = await supabase.from("Products").select("*");
+  if (error) throw new Error(error.message);
+  return data;
 }

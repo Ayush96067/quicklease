@@ -57,7 +57,7 @@ const categories = [
 function Card({ category }) {
   return (
     <NavLink
-      to={category.title}
+      to={`category/${category.title}`}
       className="group relative h-full w-full cursor-pointer transition-all duration-700"
     >
       <div className="absolute inset-0 z-50 flex h-full w-full items-center justify-center overflow-hidden backdrop-blur-[1px] backdrop-brightness-75 transition-all duration-700 lg:translate-y-[40rem] lg:backdrop-blur-md lg:group-hover:translate-y-0">

@@ -1,13 +1,15 @@
-import { getOrders } from "../../services/apiProduct";
 import ProductRow from "../../ui/ProductRow";
 import Spinner from "../../ui/Spinner";
-import Table from "../../ui/Table";
 import { useCurrentUser } from "../authentication/useCurrentUser";
-import { useGetOrders } from "./useGetOrders";
+import { useGetOrder } from "./useGetOrder";
 
 function Orders() {
   const { user } = useCurrentUser();
-  const { product, isLoading } = useGetOrders(user.id);
+
+  const { product, isLoading } = useGetOrder({
+    column: "userid",
+    value: user.id,
+  });
 
   if (isLoading)
     return (
