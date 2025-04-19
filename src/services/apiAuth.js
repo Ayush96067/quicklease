@@ -11,6 +11,7 @@ export async function signup(user) {
     imageSrc,
     password,
     pincode,
+    addhar,
   } = user;
 
   const imageName = `${Math.random()}-${imageSrc[0].name}`.replaceAll("/", "");
@@ -32,6 +33,7 @@ export async function signup(user) {
         imagePath,
         aadharPath,
         pincode,
+        addhar,
       },
     },
   });
@@ -112,4 +114,10 @@ export async function updateUser({ password, fullname, avatar }) {
   if (updateError) throw new Error(updateError.message);
 
   return updateUser;
+}
+
+export async function deleteProduct(id) {
+  const { error } = await supabase.from("Products").delete().eq("id", id);
+
+  if (error) throw new Error(error.message);
 }

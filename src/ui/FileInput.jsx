@@ -9,14 +9,14 @@ const FileInput = styled.input.attrs({ type: "file" })`
     border-radius: 16px;
     border: none;
     color: white;
-    background-color: var(--color-brand-600);
+    background-color: #574fff;
     cursor: pointer;
     transition:
       color 0.2s,
       background-color 0.2s;
 
     &:hover {
-      background-color: var(--color-brand-700);
+      background-color: #4338ca;
     }
   }
 `;

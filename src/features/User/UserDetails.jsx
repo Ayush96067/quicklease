@@ -8,6 +8,7 @@ import Orders from "./Orders";
 import Order_History from "./Order_History";
 import UpdateUserPassword from "./UpdateUserPassword";
 import UpdateUserData from "./UpdateUserData";
+import { useCurrentUser } from "../authentication/useCurrentUser";
 
 const sideBarComponent = [
   {
@@ -56,13 +57,13 @@ function UserDetails({ user }) {
       <div
         className={`w-full p-4 ${show ? "brightness-50" : "brightness-100"}`}
       >
-        <DisplayContent />
+        <DisplayContent user={user} />
       </div>
     </div>
   );
 }
 
-function DisplayContent() {
+function DisplayContent({ user }) {
   const [searchParams] = useSearchParams();
   const params = searchParams.get("tab");
 
@@ -71,7 +72,7 @@ function DisplayContent() {
       {params === "profile" && <Profile />}
       {params === "add" && <AddProduct />}
       {params === "products" && <Orders />}
-      {params === "history" && <Order_History />}
+      {params === "history" && <Order_History userId={user.id} />}
       {params === "password" && <UpdateUserPassword />}
       {params === "userdata" && <UpdateUserData />}
     </>

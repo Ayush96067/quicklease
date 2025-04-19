@@ -26,14 +26,12 @@ export default function ProductCard({ product }) {
         <CardBody>
           <Typography
             color="blue-gray"
-            className="mb-2 text-3xl uppercase lg:text-[2.5rem]"
+            className="mb-2 text-3xl text-black uppercase lg:text-[2.5rem]"
           >
             {/* Name */}
             {name}
           </Typography>
-          <Typography className="text-lg md:text-xl lg:text-2xl">
-            {/* Short description */}
-            {/* {description} */}
+          <Typography className="text-lg text-gray-500 md:text-xl lg:text-2xl">
             {shortDesc}
           </Typography>
         </CardBody>

@@ -7,20 +7,28 @@ import Input from "../../ui/Input";
 import FileInput from "../../ui/FileInput";
 import { Button } from "../../ui/Button";
 import SpinnerMini from "../../ui/SpinnerMini";
+import { useState } from "react";
+import validateAddhaar from "../../services/addharValidate";
+import toast from "react-hot-toast";
 
 function SignupForm() {
   const { register, formState, getValues, handleSubmit, reset } = useForm();
+  const [addhar, setAddhar] = useState("");
   const { signup, isSigningup } = useSignup();
   const navigate = useNavigate();
   const { errors } = formState;
 
   function onSubmit(e) {
-    signup(e, {
-      onSettled: () => {
-        reset();
-        navigate("/login");
-      },
-    });
+    if (validateAddhaar(e.addhar)) {
+      signup(e, {
+        onSettled: () => {
+          reset();
+          navigate("/login");
+        },
+      });
+    } else {
+      toast.error("Enter valid addhar number");
+    }
   }
 
   return (
@@ -103,6 +111,20 @@ function SignupForm() {
             required: "This field is required",
             pattern: {
               value: /\S+@\S+\.\S+/,
+              message: "Please provide valid email address",
+            },
+          })}
+        />
+      </FormRow>
+      <FormRow label="Addhar number" error={errors?.addhar?.message}>
+        <Input
+          type="text"
+          id="addhar"
+          disabled={isSigningup}
+          {...register("addhar", {
+            required: "This field is required",
+            pattern: {
+              validate: /^\d{4}\s\d{4}\s\d{4}$/,
               message: "Please provide valid email address",
             },
           })}

@@ -6,6 +6,8 @@ import { useCurrentUser } from "./useCurrentUser";
 import { Spinner } from "@material-tailwind/react";
 import styled from "styled-components";
 import { Button } from "../../ui/Button";
+import toast from "react-hot-toast";
+import { replace, useNavigate } from "react-router-dom";
 
 const StyledUserAvatar = styled.div`
   display: flex;
@@ -27,12 +29,24 @@ const Avatar = styled.img`
 `;
 
 function UserAvatar() {
-  const { user, isPending } = useCurrentUser();
+  const { user, isPending, isError } = useCurrentUser();
+  const navigate = useNavigate();
+  const { logout } = useLogout();
+
   if (isPending) return <Spinner />;
+
+  if (isError) {
+    toast.error("There is an error logging in");
+    logout();
+    navigate("/login", {
+      replace: true,
+    });
+  }
+
   const { fullname, imagePath } = user.user_metadata;
 
   return (
-    <StyledUserAvatar className="order-1 flex text-lg md:order-none md:text-[1.3rem] lg:text-3xl">
+    <StyledUserAvatar className="order-1 flex text-lg md:order-none md:text-[1.3rem] lg:text-2xl">
       <div className="flex items-center gap-5">
         <Avatar
           className="w-[4rem]"

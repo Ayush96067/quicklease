@@ -5,10 +5,14 @@ export const Button = styled.button`
   color: black;
   padding: 0.6rem;
   border-radius: 12px;
-  transition: all 0.5s;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
   &:hover {
     background-color: #a6d000;
-    scale: 1.1;
   }
-  cursor: pointer;
+
+  &:disabled {
+    cursor: no-drop;
+    background-color: #6f8b01;
+  }
 `;

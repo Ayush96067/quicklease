@@ -11,7 +11,7 @@ import Spinner from "./Spinner";
 
 const NavBar = styled.nav`
   position: fixed;
-  padding: 0.4rem 1rem;
+  padding: 1.5rem 2rem;
   box-sizing: border-box;
 `;
 

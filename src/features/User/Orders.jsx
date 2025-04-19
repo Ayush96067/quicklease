@@ -1,7 +1,31 @@
+import Menus from "../../ui/Menus";
 import ProductRow from "../../ui/ProductRow";
 import Spinner from "../../ui/Spinner";
 import { useCurrentUser } from "../authentication/useCurrentUser";
 import { useGetOrder } from "./useGetOrder";
+
+const headers = [
+  {
+    heading: "Name",
+    direction: "left",
+  },
+  {
+    heading: "Company",
+    direction: "left",
+  },
+  {
+    heading: "Price",
+    direction: "left",
+  },
+  {
+    heading: "Category",
+    direction: "center",
+  },
+  {
+    heading: "Booked",
+    direction: "center",
+  },
+];
 
 function Orders() {
   const { user } = useCurrentUser();
@@ -21,7 +45,7 @@ function Orders() {
   if (product.length == 0)
     return (
       <div className="flex h-full w-full items-center justify-center">
-        <h1>You haven't order anything yet! 😅</h1>
+        <h1>You haven't rented anything yet! 😅</h1>
       </div>
     );
 
@@ -30,32 +54,37 @@ function Orders() {
       <h1 className="text-center">Your Products</h1>
       <div className="p-1">
         <div className="w-full overflow-x-auto">
-          <table className="w-full table-auto bg-[#eeffcc] text-black">
-            <thead className="bg-[#bbff44] text-base font-medium uppercase md:text-lg lg:text-xl">
-              <tr>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="text-left font-semibold">Name</div>
-                </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="text-left font-semibold">Company</div>
-                </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="text-left font-semibold">Price</div>
-                </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="text-center font-semibold">Category</div>
-                </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="text-center font-semibold">Booked</div>
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-gray-100 text-xs md:text-lg lg:text-xl">
-              {product.map((prod) => (
-                <ProductRow product={prod} key={prod.name} />
-              ))}
-            </tbody>
-          </table>
+          <Menus>
+            <table className="w-full table-auto bg-[#eeffcc] text-black">
+              <thead className="bg-[#bbff44] text-base font-medium uppercase md:text-lg lg:text-xl">
+                <tr>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="text-left font-semibold">Name</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="text-left font-semibold">Company</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="text-left font-semibold">Price</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="text-center font-semibold">Category</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="text-center font-semibold">Booked</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="font-semibold"></div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-gray-100 text-xs md:text-lg lg:text-xl">
+                {product.map((prod) => (
+                  <ProductRow product={prod} key={prod.name} />
+                ))}
+              </tbody>
+            </table>
+          </Menus>
         </div>
       </div>
     </div>

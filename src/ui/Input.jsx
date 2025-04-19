@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Input = styled.input`
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 16px;
   padding: 0.8rem 1.2rem;
   background-color: white;

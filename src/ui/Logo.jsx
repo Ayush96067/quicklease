@@ -9,6 +9,7 @@ const StyledImage = styled.img`
     scale: 1.2;
   }
 `;
+
 function Logo() {
   return (
     <NavLink to="home ">
