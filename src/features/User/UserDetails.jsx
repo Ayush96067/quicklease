@@ -7,7 +7,7 @@ import Orders from "./Orders";
 import Order_History from "./Order_History";
 import UpdateUserPassword from "./UpdateUserPassword";
 import UpdateUserData from "./UpdateUserData";
-import Sidebar from "../../ui/Sidebar.jsx";
+import Sidebar from "./Sidebar";
 
 const sideBarComponent = [
   {
