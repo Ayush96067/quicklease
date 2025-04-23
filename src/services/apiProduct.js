@@ -113,6 +113,8 @@ export async function getOrder(data) {
     .select("*")
     .eq([column], value);
 
+  if (Products == null) return null;
+
   if (error) throw new Error(error.message);
 
   return Products;

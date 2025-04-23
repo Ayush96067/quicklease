@@ -3,12 +3,13 @@ import PageSpinner from "../../ui/PageSpinner";
 import { useGetOrder } from "./useGetOrder";
 import { useOrder } from "./useOrder";
 import OrderRow from "./OrderRow";
+import toast from "react-hot-toast";
 
 function Order_History({ userId }) {
   const { orders } = useOrder({ column: "buyerID", value: userId });
 
   let product_id = "";
-  if (orders) product_id = orders[0].product_id;
+  if (orders) product_id = orders[0]?.product_id;
 
   const { product, isLoading } = useGetOrder({
     column: "id",
@@ -16,6 +17,13 @@ function Order_History({ userId }) {
   });
 
   if (isLoading) return <PageSpinner />;
+
+  if (product == null)
+    return (
+      <div className="flex h-full w-full items-center justify-center">
+        <h1>You haven't order anything yet! 😅</h1>
+      </div>
+    );
 
   if (product.length == 0)
     return (
