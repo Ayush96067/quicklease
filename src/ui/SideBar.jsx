@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-const TabButton = styled.button`
+const TabButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "active",
+})`
   ${(props) =>
     props.active === "true" &&
     css`
