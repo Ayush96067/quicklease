@@ -102,13 +102,6 @@ function Navbar({ display, setDisplay }) {
           >
             Product
           </StyledLink>
-          <StyledLink
-            onClick={() => setDisplay((o) => !o)}
-            className=""
-            to="settings"
-          >
-            Settings
-          </StyledLink>
         </div>
         <div
           className={`${change ? "md:scale-150" : "scale-100"} flex flex-col items-center gap-3 text-[.7rem] md:flex-row md:text-[.8rem] lg:text-[1.4rem]`}

@@ -106,8 +106,6 @@ export async function getOrderHistory(data) {
 }
 
 export async function getOrder(data) {
-  console.log(data);
-
   const { column, value } = data.queryKey[1];
 
   let { data: Products, error } = await supabase

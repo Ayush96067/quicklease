@@ -10,7 +10,6 @@ import {
 import Applayout from "./ui/Applayout";
 import Home from "./pages/Home";
 import User from "./pages/User";
-import Settings from "./pages/Settings";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Login from "./pages/Login";
@@ -41,7 +40,6 @@ function App() {
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<Home />} />
             <Route path="user" element={<User />} />
-            <Route path="settings" element={<Settings />} />
             <Route path="products" element={<Products />} />
             <Route path="about" element={<About />} />
             <Route path="/products/:id" element={<Product />} />

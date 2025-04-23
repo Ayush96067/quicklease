@@ -11,23 +11,20 @@ const FixedBg = styled.div`
   background-size: cover;
 `;
 
-// function About() {
-//   return (
-//     <div>
-//       <Hero />
-//       <FixedBg className="bg-[url(./img11.jpg)] bg-center lg:bg-top">
-//         <div className="h-[100vh] w-full">hello</div>
-//       </FixedBg>
-//       <HeroSec2 />
-//       <FixedBg className="bg-[url(./img11.jpg)] bg-center">
-//         <div className="h-[100vh] w-full">hello</div>
-//       </FixedBg>
-//       <HeroSec2 />
-//     </div>
-//   );
-// }
-
 function About() {
-  return <div>About</div>;
+  return (
+    <div className="p-10 lg:p-5">
+      <Hero />
+      <FixedBg className="bg-[url(./img11.jpg)] bg-center lg:bg-top">
+        {/* <div className="h-[100vh] w-full">hello</div> */}
+      </FixedBg>
+      <HeroSec2 />
+      <FixedBg className="bg-[url(./img11.jpg)] bg-center">
+        <div className="h-[100vh] w-full">hello</div>
+      </FixedBg>
+      <HeroSec2 />
+    </div>
+  );
 }
+
 export default About;
