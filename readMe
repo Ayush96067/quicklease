@@ -1,0 +1,6 @@
+steps to deploy on netlify by creating a 'dist' folder using build
+
+1. npm run build
+2. Drop down the dist folder manually to the deploy manually page in netlify
+
+# QuickLease
