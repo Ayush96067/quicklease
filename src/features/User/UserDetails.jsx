@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Button } from "../../ui/Button";
 import { useSearchParams } from "react-router-dom";
-import SideBar from "../../ui/Sidebar";
 import Profile from "./Profile";
 import AddProduct from "./AddProduct";
 import Orders from "./Orders";
 import Order_History from "./Order_History";
 import UpdateUserPassword from "./UpdateUserPassword";
 import UpdateUserData from "./UpdateUserData";
-import { useCurrentUser } from "../authentication/useCurrentUser";
+import SideBar from "../../ui/Sidebar";
 
 const sideBarComponent = [
   {
