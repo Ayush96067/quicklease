@@ -10,7 +10,7 @@ const TabButton = styled.button`
     `}
 `;
 
-function SideBar({ setShow, sideBarComponent }) {
+function Sidebar({ setShow, sideBarComponent }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentTab, setCurrentTab] = useState("profile");
 
@@ -50,4 +50,4 @@ function SideBar({ setShow, sideBarComponent }) {
   );
 }
 
-export default SideBar;
+export default Sidebar;

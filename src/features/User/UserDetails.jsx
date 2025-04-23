@@ -7,7 +7,7 @@ import Orders from "./Orders";
 import Order_History from "./Order_History";
 import UpdateUserPassword from "./UpdateUserPassword";
 import UpdateUserData from "./UpdateUserData";
-import SideBar from "../../ui/Sidebar";
+import Sidebar from "../../ui/Sidebar";
 
 const sideBarComponent = [
   {
@@ -50,7 +50,7 @@ function UserDetails({ user }) {
       <div
         className={`border-r-4 border-r-[#323131] lg:w-full lg:translate-x-0 ${show ? "w-full translate-x-0" : "w-0 -translate-x-full overflow-hidden"} bg-[#ffffff10] transition-all duration-300 ease-in-out`}
       >
-        <SideBar setShow={setShow} sideBarComponent={sideBarComponent} />
+        <Sidebar setShow={setShow} sideBarComponent={sideBarComponent} />
       </div>
 
       <div
