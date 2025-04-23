@@ -1,4 +1,4 @@
-# Quick Lease
+# Quick Lease : Built with React,React Query and supabase
 
 Webapp that opens the new way of sharing and borrowing the things you need or want.
 

@@ -4,3 +4,25 @@ steps to deploy on netlify by creating a 'dist' folder using build
 2. Drop down the dist folder manually to the deploy manually page in netlify
 
 # QuickLease
+
+Git commands
+
+// intialize git repository
+git init
+
+// add all files
+git add -A
+
+// check status
+git status
+
+// Commit changes
+git commit -m "Initial Commit"
+
+// push the main file
+git push -u origin main
+
+// adding remote origin from vs code to github
+git remote add origin https://...../projectName
+
+git push -u origin main

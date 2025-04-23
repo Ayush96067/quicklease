@@ -19,7 +19,6 @@ import ProductsPage from "./features/Products/ProductsPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import { Toaster } from "react-hot-toast";
 import Product from "./features/Products/Product";
-import Payment from "./pages/Payment";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,7 +42,6 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="about" element={<About />} />
             <Route path="/products/:id" element={<Product />} />
-            <Route path="/products/:id/payNow" element={<Payment />} />
 
             <Route
               path="/products/category/:category"
