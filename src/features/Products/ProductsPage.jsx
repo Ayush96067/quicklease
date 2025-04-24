@@ -24,13 +24,13 @@ function ProductsPage() {
     );
 
   return (
-    <div className="grid min-h-[100vh] grid-rows-[15%_auto] gap-10">
-      <div className="flex flex-col gap-4 self-end border-b border-b-white p-3 lg:p-6">
-        <h1 className="text-4xl lg:text-8xl">
+    <div className="min-h-[100vh] gap-10">
+      <div className="self-end border-b border-b-white p-3 lg:p-6">
+        <h1 className="mt-[5rem] text-4xl lg:mt-[10rem] lg:text-8xl">
           Category - <span className="capitalize">{category}</span>{" "}
         </h1>
       </div>
-      <StyledContainer className="grid min-h-[40vh] grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <StyledContainer className="grid min-h-[40vh] grid-cols-1 place-items-center gap-[7rem] md:grid-cols-2 lg:grid-cols-4">
         {product.map((prod) => (
           <ProductCard product={prod} key={prod.id} />
         ))}

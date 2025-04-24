@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
 
   return (
     <Card className="mt-5 h-fit w-full cursor-pointer overflow-hidden rounded-4xl shadow-white transition-all duration-500 hover:bg-gray-200">
-      <Link to={`${id}`}>
+      <Link to={`/products/${id}`}>
         <CardHeader color="blue-gray" className="h-96">
           <img
             src={imageSrc}
