@@ -29,28 +29,53 @@ const categories = [
   },
   {
     id: 2,
-    title: "books",
-    imageSrc: "/img4.jpg",
+    title: "study",
+    imageSrc: "./category/study.jpg",
   },
   {
     id: 3,
-    title: "vechicles",
-    imageSrc: "/img3.jpg",
+    title: "furniture",
+    imageSrc: "./category/furniture.jpg",
   },
   {
     id: 4,
-    title: "accomodation",
-    imageSrc: "/img2.jpg",
+    title: "home_appliances",
+    imageSrc: "./category/home_appliances.jpg",
   },
   {
     id: 5,
-    title: "home-decore",
-    imageSrc: "/img1.jpg",
+    title: "vehicle",
+    imageSrc: "/img3.jpg",
   },
   {
     id: 6,
-    title: "Clothes",
-    imageSrc: "/img2.jpg",
+    title: "accomodation",
+    imageSrc: "./category/accomodation.avif",
+  },
+  {
+    id: 7,
+    title: "sports",
+    imageSrc: "./category/sports.jpeg",
+  },
+  {
+    id: 8,
+    title: "events",
+    imageSrc: "./category/events.jpeg",
+  },
+  {
+    id: 9,
+    title: "tools_hardware",
+    imageSrc: "./category/tools_hardware.avif",
+  },
+  {
+    id: 10,
+    title: "kids",
+    imageSrc: "./category/kids.jpg",
+  },
+  {
+    id: 11,
+    title: "travel_camping",
+    imageSrc: "./category/travel.jpeg",
   },
 ];
 
@@ -60,8 +85,8 @@ function Card({ category }) {
       to={`category/${category.title}`}
       className="group relative h-full w-full cursor-pointer transition-all duration-700"
     >
-      <div className="absolute inset-0 z-50 flex h-full w-full items-center justify-center overflow-hidden backdrop-blur-[1px] backdrop-brightness-75 transition-all duration-700 lg:translate-y-[40rem] lg:backdrop-blur-md lg:group-hover:translate-y-0">
-        <h1 className="text-4xl text-[white] md:text-7xl lg:text-7xl">
+      <div className="absolute inset-0 z-50 flex h-full w-full items-center justify-center overflow-hidden rounded-4xl backdrop-blur-[1px] backdrop-brightness-75 transition-all duration-700 lg:translate-y-[40rem] lg:backdrop-blur-md lg:group-hover:translate-y-0">
+        <h1 className="text-4xl text-[white] capitalize md:text-7xl lg:text-5xl">
           {category.title}
         </h1>
       </div>

@@ -15,7 +15,7 @@ export default function ProductCard({ product }) {
   const shortDesc = description.slice(0, 200).concat(".....");
 
   return (
-    <Card className="mt-5 h-full w-full cursor-pointer overflow-hidden rounded-4xl shadow-white transition-all duration-500 hover:bg-gray-200">
+    <Card className="mt-5 h-fit w-full cursor-pointer overflow-hidden rounded-4xl shadow-white transition-all duration-500 hover:bg-gray-200">
       <Link to={`${id}`}>
         <CardHeader color="blue-gray" className="h-96">
           <img
