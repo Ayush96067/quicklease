@@ -17,7 +17,9 @@ function AddProduct() {
   const { user } = useCurrentUser();
 
   function onSubmit(e) {
-    createProduct(e);
+    createProduct(e, {
+      onSuccess: reset,
+    });
   }
 
   return (
