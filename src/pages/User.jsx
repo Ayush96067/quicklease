@@ -25,7 +25,7 @@ function User() {
 
   return (
     <StyledDiv className="w-full">
-      <div className="grid min-h-[100vh] grid-rows-[15%_auto]">
+      <div className="relative -top-10 grid min-h-[100vh] grid-rows-[15%_auto] lg:top-20">
         <div className="flex flex-col gap-4 self-end border-b border-b-white p-3 lg:p-6">
           <h1 className="text-4xl lg:text-8xl">User Account Section</h1>
         </div>
